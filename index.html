@@ -134,7 +134,7 @@
           <span class="author-block">* Equal contribution of the first two authors</span>
         </div>
         <div class="is-size-6 publication-authors">
-          <span class="author-block">† Corresponding author(Email: chhxian@scut.edu.cn)</span>
+          <span class="author-block">† Corresponding authors (Email: chhxian@scut.edu.cn, guoxinfang@cuhk.edu.hk)</span>
         </div>
       </div>
 
@@ -176,7 +176,7 @@
               <span class="icon">
                   <i class="fab fa-github"></i>
               </span>
-              <span>Code(comming soon)</span>
+              <span>Code (coming soon)</span>
               </a>
           </span>
           <!-- Dataset Link. -->
@@ -186,7 +186,7 @@
               <span class="icon">
                   <i class="far fa-images"></i>
               </span>
-              <span>Data(comming soon)</span>
+              <span>Data (coming soon)</span>
               </a>
         </div>
 
@@ -219,7 +219,7 @@
       <h2 class="caption is-size-6 is-centered has-text-centered has-text-justified">
           This paper introduces a Lipschitz optimization method that can significantly accelerate the convergence speed of reduced-order 
           simulations driven by neural-network-based approaches. (a) The deformation process can be formulated as a path through a configuration 
-          manifold \(\mathcal{M} \subseteq \mathbb{R}^n\) , where reduced-order solvers tend to find a mapping \(f_\theta(z)\) that maps a low-dimensional 
+          manifold \(\mathcal{M} \subseteq \mathbb{R}^n\), where reduced-order solvers tend to find a mapping \(f_\theta(z)\) that maps a low-dimensional 
           subspace \(\mathbb{R}^r\) to the manifold. (b) Our method enhances the objective landscape in the neural
         subspace by minimizing the second-order Lipschitz regularization energy, which substantially improves convergence speed when using iterative solvers like
         Newton's method. (c, d) Compared to conventional linear subspace methods (driven by PCA) and direct neural subspace constructions, our method achieves
@@ -312,7 +312,7 @@
             the cubature approximation into the training process to manage the high
             memory and time demands associated with optimizing the newly introduced energy. 
             Our method is versatile and applicable to both supervised and
-            unsupervised settings for optimizing the parameterizations of the configuration manifolds.We demonstrate the effectiveness of our approach through
+            unsupervised settings for optimizing the parameterizations of the configuration manifolds. We demonstrate the effectiveness of our approach through
             general cases in both quasi-static and dynamics simulations.
           </p>
           <p>
@@ -342,11 +342,9 @@
                  class="interpolation-image" width="60%"/>
           <div class="content has-text-justified">
             <p>
-              Network training settings for effective neural subspace construction.
-              (a) The supervised setting. (b) The unsupervised setting. Conventional 
-              methods only consider the loss shown in blue but do not optimize the Lipschitz
-              loss (shown in orange) to control the landscape of simulation objective in
-              the subspace.
+              An overview for our neural subspace construction settings. (a) The supervised setting. (b) The unsupervised setting. 
+              Conventional methods only consider the construction losses shown in blue but do not optimize the Lipschitz loss (shown in orange) 
+              to control the landscape of the simulation objective in the subspace.
             </p>
             <p></p>
           </div>
@@ -358,38 +356,34 @@
     <div class="columns is-centered">
       <div class="column is-full-width">
         <h2 class="title is-3">Experiment results</h2>
-        <h3 class="title is-4">Interactive Simulation with Dynamics</h3>
+        <h3 class="title is-4">Quantitative Comparison on Simulation Speed</h3>
         <div class="experiment">
           <div class="has-text-centered">
             <img src="static/images/fig-complex-deformation.png"
                    class="interpolation-image" width="60%"/>
             <div class="content has-text-justified">
               <p>
-                Our method and the vanilla subspace construction produce complex
-                deformations on the dinosaur mesh by applying interactions. We also report
-                the simulation time cost distribution of the two methods.
+                We compare the simulation speed of method and the vanilla subspace construction by collecting the simulation time cost distribution of the two methods. 
+                For the dinosaur example that produces complex deformations by applying interactions, our method reaches an acceleration rate of 6.83x.
               </p>
             </div>
           </div>
         </div>
         <br/>
 
-        <h3 class="title is-4">Twist Bar with Quasi-static Simulation</h3>
+        <h3 class="title is-4">Quantitative Comparison on Simulation Quality</h3>
         <div class="experiment">
           <div class="has-text-centered">
             <img src="static/images/fig-compress-bar-quality.png"
                    class="interpolation-image" width="60%"/>
             <div class="content has-text-justified">
               <p>
-                Performance on a compressed and twisted bar. The simulation results
-                using subspaces are rendered in blue, while full-space simulation results
-                are overlaid in purple as reference shapes. (a) Results of vanilla neural
-                subspace. (b) Results of our method with optimized Lipschitz energy. (c)
-                Comparison of the convergence speed in the simulation when converging to
-                a similar termination energy. (d) Simulation error distribution with full-space
-                simulation as the reference. The solid lines are Kernel Density Estimation
-                (KDE) plots that visualize the estimated probability density curves of the
-                simulation error.
+                We compare the simulation quality of method and the vanilla subspace construction. 
+                (a) Results of vanilla neural subspace. (b) Results of our method with optimized Lipschitz energy. 
+                (c) For the shown simulation, the two methods converge to the same level of potential energy while the convergence speed of our method is accelerated 
+                by \(\sim\)3 times. (d) Simulation error distribution with full-space simulation as the reference. The solid lines are Kernel Density Estimation (KDE) 
+                plots that visualize the estimated probability density curves of the simulation error. The KDE of our method is analogous to that of the vanilla neural 
+                subspace construction, showing a comparable simulation quality of our method.
               </p>
             </div>
           </div>
@@ -403,13 +397,13 @@
                    class="interpolation-image" width="60%"/>
             <div class="content has-text-justified">
               <p>
-                We construct subspaces of different dimensions for the Elephant
-                problem and compare their simulation quality and speed. (a) Qualitative
-                comparison on simulation quality by applying a fixed interaction to the
-                trunk. (b) Qualitative comparison on simulation quality and speed by mean
-                error of full-space simulation states projections and mean simulation step
-                time cost. (c) Qualitative comparison on the Lipschitz constants of the
-                subspace Hessian.
+                We construct subspaces of different dimensions for the Elephant example and compare their simulation quality and speed. 
+                (a) Qualitative comparison on simulation quality by applying a fixed interaction to the trunk. 
+                (b) Qualitative comparison on simulation quality and speed by mean error of full-space simulation states projections and mean simulation step time cost. 
+                (c) Qualitative comparison on the Lipschitz constants of the subspace Hessian. With the increase in the subspace dimension, 
+                our method demonstrates greater acceleration compared to the vanilla method because our simulation time remains small, 
+                while the vanilla method experiences a significant increase. This illustrates that our method can effectively enhance simulation quality 
+                by increasing the subspace dimension with only a small increase in simulation time.
               </p>
             </div>
           </div>
@@ -424,8 +418,8 @@
                 We test the performance of the proposed Lipschitz optimization
                 method in various physical systems and demonstrate that our method can effectively 
                 improve the Lipschitz constant of the subspace potential Hessian, resulting in simulation speedups. Furthermore, our
-                method conserves subspace quality, thus achieving similar configuration manifold coverage and comparable simulation quality (please
-                refer to our supplemental video or download the paper for all results).
+                method conserves subspace quality, thus achieving similar configuration manifold coverage and comparable simulation quality 
+                (please refer to our paper and supplemental video for all results).
               </p>
             </div>
           </div>
