@@ -32,7 +32,6 @@
   <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
-  <link rel="icon" href="./static/images/favicon.svg">
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
@@ -96,7 +95,7 @@
           <h2 class="title is-size-5" style="color: red">SIGGRAPH Asia 2024 (ACM Transactions on Graphics)</h2>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
-              Aoran Lyu<sup>1, *</sup>,
+              Aoran Lyu<sup>1, 3, *</sup>,
             </span>
             <span class="author-block">
               Shixian Zhao<sup>1, *</sup>,
@@ -111,7 +110,7 @@
               Hongmin Cai<sup>1</sup>,
             </span>
             <span class="author-block">
-              Guoxin Fang<sup>2</sup>
+              Guoxin Fang<sup>2, †</sup>
             </span>
             
             <!-- <span class="author-block">
@@ -123,10 +122,13 @@
 
       <div class="column has-text-centered">
         <div class="is-size-6 publication-authors">
-          <span class="author-block">1.South China University of Technology</span>
+          <span class="author-block">1.South China University of Technology, China</span>
         </div>
         <div class="is-size-6 publication-authors">
-          <span class="author-block">2.The Chinese University of Hong Kong</span>
+          <span class="author-block">2.The Chinese University of Hong Kong, China</span>
+        </div>
+        <div class="is-size-6 publication-authors">
+          <span class="author-block">3.The University of Manchester, United Kingdom</span>
         </div>
         <div class="is-size-6 publication-authors">
           <span class="author-block">* Equal contribution of the first two authors</span>
@@ -140,7 +142,7 @@
         <div class="publication-links">
           <!-- PDF Link. -->
           <span class="link-block">
-            <a href="https://arxiv.org/pdf/2011.12948"
+            <a href=""
                 class="external-link button is-normal is-rounded is-dark">
               <span class="icon">
                   <i class="fas fa-file-pdf"></i>
@@ -149,7 +151,7 @@
             </a>
           </span>
           <span class="link-block">
-            <a href="https://arxiv.org/abs/2011.12948"
+            <a href=""
                 class="external-link button is-normal is-rounded is-dark">
               <span class="icon">
                   <i class="ai ai-arxiv"></i>
@@ -159,7 +161,7 @@
           </span>
           <!-- Video Link. -->
           <span class="link-block">
-            <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA"
+            <a href=""
                 class="external-link button is-normal is-rounded is-dark">
               <span class="icon">
                   <i class="fab fa-youtube"></i>
@@ -169,23 +171,23 @@
           </span>
           <!-- Code Link. -->
           <span class="link-block">
-            <a href="https://github.com/google/nerfies"
+            <a href=""
                 class="external-link button is-normal is-rounded is-dark">
               <span class="icon">
                   <i class="fab fa-github"></i>
               </span>
-              <span>Code</span>
+              <span>Code(comming soon)</span>
               </a>
           </span>
           <!-- Dataset Link. -->
-          <!-- <span class="link-block">
-            <a href="https://github.com/google/nerfies/releases/tag/0.1"
+          <span class="link-block">
+            <a href=""
                 class="external-link button is-normal is-rounded is-dark">
               <span class="icon">
                   <i class="far fa-images"></i>
               </span>
-              <span>Data</span>
-              </a> -->
+              <span>Data(comming soon)</span>
+              </a>
         </div>
 
     </div>
@@ -215,7 +217,7 @@
                  class="interpolation-image"/>
       
       <h2 class="caption is-size-6 is-centered has-text-centered has-text-justified">
-          We propose a Lipschitz optimization method that can significantly accelerate the convergence speed of reduced-order 
+          This paper introduces a Lipschitz optimization method that can significantly accelerate the convergence speed of reduced-order 
           simulations driven by neural-network-based approaches. (a) The deformation process can be formulated as a path through a configuration 
           manifold \(\mathcal{M} \subseteq \mathbb{R}^n\) , where reduced-order solvers tend to find a mapping \(f_\theta(z)\) that maps a low-dimensional 
           subspace \(\mathbb{R}^r\) to the manifold. (b) Our method enhances the objective landscape in the neural
@@ -334,7 +336,7 @@
   <div class="container is-max-desktop">
     <div class="columns is-centered">
       <div class="column">
-        <h2 class="title is-3">Network architecture</h2>
+        <h2 class="title is-3">Overview</h2>
         <div class="content has-text-centered">
           <img src="./static/images/fig-training-settings.png"
                  class="interpolation-image" width="60%"/>
@@ -356,7 +358,7 @@
     <div class="columns is-centered">
       <div class="column is-full-width">
         <h2 class="title is-3">Experiment results</h2>
-        <h3 class="title is-4">Evaluation on Supervised Settings</h3>
+        <h3 class="title is-4">Interactive Simulation with Dynamics</h3>
         <div class="experiment">
           <div class="has-text-centered">
             <img src="static/images/fig-complex-deformation.png"
@@ -372,27 +374,29 @@
         </div>
         <br/>
 
-        <h3 class="title is-4">Evaluation on Unsupervised Settings</h3>
+        <h3 class="title is-4">Twist Bar with Quasi-static Simulation</h3>
         <div class="experiment">
           <div class="has-text-centered">
-            <img src="static/images/fig-unsupervised-tests.png"
+            <img src="static/images/fig-compress-bar-quality.png"
                    class="interpolation-image" width="60%"/>
             <div class="content has-text-justified">
               <p>
-                Comparison of performance (simulation speed and quality) on (a)
-                a bistable bar, and (b) a cloth simulation with interactions, where the 
-                subspaces are constructed by unsupervised learning. The box plots on the right
-                present the stepping time distribution, with the box height representing
-                the interquartile range and the width indicating the number of data points
-                within the corresponding range. For the vanilla subspaces, a few outliers
-                (~1% of the data) were omitted to avoid over-compression of the plot.
+                Performance on a compressed and twisted bar. The simulation results
+                using subspaces are rendered in blue, while full-space simulation results
+                are overlaid in purple as reference shapes. (a) Results of vanilla neural
+                subspace. (b) Results of our method with optimized Lipschitz energy. (c)
+                Comparison of the convergence speed in the simulation when converging to
+                a similar termination energy. (d) Simulation error distribution with full-space
+                simulation as the reference. The solid lines are Kernel Density Estimation
+                (KDE) plots that visualize the estimated probability density curves of the
+                simulation error.
               </p>
             </div>
           </div>
         </div>
         <br/>
 
-        <h3 class="title is-4">Comparison on Hyperparameters Selection</h3>
+        <h3 class="title is-4">Influence of Subspace Dimension on Simulation Quality and Speed</h3>
         <div class="experiment">
           <div class="has-text-centered">
             <img src="static/images/fig-dim-analysis.png"
@@ -564,12 +568,7 @@
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
-    <pre><code>@article{park2021nerfies,
-  author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},
-  title     = {Nerfies: Deformable Neural Radiance Fields},
-  journal   = {ICCV},
-  year      = {2021},
-}</code></pre>
+    <pre><code>Comming soon</code></pre>
   </div>
 </section>
 
@@ -578,10 +577,10 @@
   <div class="container">
     <div class="content has-text-centered">
       <a class="icon-link"
-         href="./static/videos/nerfies_paper.pdf">
+         href="">
         <i class="fas fa-file-pdf"></i>
       </a>
-      <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
+      <a class="icon-link" href="" class="external-link" disabled>
         <i class="fab fa-github"></i>
       </a>
     </div>
